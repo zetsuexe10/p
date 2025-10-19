@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulquiorra Cifer - Gaming Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #a40000;
+            --primary-dark: #5d0000;
+            --primary-light: #ff3f3f;
+            --bg-dark: #0c0c0c;
+            --bg-medium: #1a1a1a;
+            --text-light: #e0e0e0;
+            --text-white: #fff;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --card-hover-shadow: 0 20px 40px rgba(164, 0, 0, 0.4);
+            --mobile-breakpoint: 768px;
+            --tablet-breakpoint: 992px;
+        }
+        
+        body {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800"><rect fill="%23121212" width="1200" height="800"/><path fill="%23333" d="M0,0L1200,800M1200,0L0,800" stroke="%23444" stroke-width="2"/></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800"><rect fill="%23121212" width="1200" height="800"/><circle fill="%235d0000" opacity="0.2" cx="200" cy="200" r="100"/><circle fill="%23a40000" opacity="0.1" cx="800" cy="600" r="150"/><circle fill="%235d0000" opacity="0.15" cx="1000" cy="300" r="120"/></svg>');
+            background-size: cover, 200px, cover;
+            background-position: center;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300"><path fill="%23a40000" fill-opacity="0.15" d="M0,0L1200,300L0,300Z"/></svg>') bottom no-repeat, 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="1200" height="200"><path fill="%23a40000" fill-opacity="0.1" d="M0,150L1200,0L1200,200L0,200Z"/></svg>') bottom no-repeat;
+            background-size: 100% 40%, 100% 50%;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            color: var(--text-white);
+            border: 5px solid var(--primary-dark);
+            box-shadow: 0 0 30px rgba(164, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .avatar::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.2), transparent 60%);
+            animation: shine 4s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--text-white);
+            text-shadow: 3px 3px 0 var(--primary-dark), 0 0 15px rgba(164, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #ccc;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+        
+        h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin: 50px 0 30px;
+            color: var(--text-white);
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            border-radius: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-white);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+            border-right: 5px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path fill="%23a40000" fill-opacity="0.05" d="M0,0L100,100M100,0L0,100" stroke="%23a40000" stroke-opacity="0.05" stroke-width="2"/></svg>');
+            background-size: 50px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .about {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(164, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-dark), var(--primary-color), var(--primary-dark));
+        }
+        
+        .highlight {
+            color: var(--primary-light);
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 63, 63, 0.5);
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(164, 0, 0, 0.3);
+            min-width: 250px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-hover-shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--primary-color);
+            width: 30px;
+            text-align: center;
+        }
+        
+        /* Social Profiles Section */
+        .social-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .social-profile-card {
+            background: linear-gradient(145deg, var(--bg-dark), var(--bg-medium));
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(164, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .social-profile-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--card-hover-shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .social-profile-header {
+            padding: 20px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-profile-icon {
+            font-size: 35px;
+            color: white;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .social-profile-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .social-profile-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .social-profile-desc {
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-profile-link {
+            display: block;
+            margin-top: auto;
+            text-align: center;
+            padding: 12px;
+            background: rgba(164, 0, 0, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-profile-link:hover {
+            background: rgba(164, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        /* Games Section */
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .game-card {
+            background: linear-gradient(145deg, var(--bg-dark), var(--bg-medium));
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(164, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--card-hover-shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .game-header {
+            padding: 20px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            text-align: center;
+        }
+        
+        .game-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .game-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .game-content {
+            padding: 25px;
+        }
+        
+        .game-desc {
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .game-features {
+            list-style: none;
+        }
+        
+        .game-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .game-features li:before {
+            content: '⚔️';
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        /* Quote Slider */
+        .quote-slider {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(164, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #fff;
+            display: none;
+        }
+        
+        .quote.active {
+            display: block;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .quote-source {
+            display: block;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-style: normal;
+            font-weight: 600;
+        }
+        
+        .quote-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            gap: 15px;
+        }
+        
+        .quote-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quote-dot.active {
+            background: var(--primary-color);
+            transform: scale(1.3);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px 0;
+            font-size: 1.1rem;
+            color: #ccc;
+            background: rgba(0, 0, 0, 0.7);
+            border-top: 1px solid rgba(164, 0, 0, 0.3);
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-dark), var(--primary-color), var(--primary-dark));
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            header {
+                padding: 80px 0 60px;
+            }
+            
+            .avatar {
+                width: 180px;
+                height: 180px;
+                font-size: 80px;
+            }
+            
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            h3 {
+                font-size: 2.5rem;
+                margin: 70px 0 40px;
+            }
+            
+            .tagline {
+                font-size: 1.6rem;
+                padding: 25px 40px;
+            }
+            
+            .about {
+                font-size: 1.4rem;
+                padding: 40px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .contact-info {
+                gap: 30px;
+                margin-top: 50px;
+            }
+            
+            .contact-item {
+                padding: 20px 30px;
+                min-width: 300px;
+            }
+            
+            .social-profiles {
+                gap: 30px;
+                margin-top: 50px;
+            }
+            
+            .social-profile-header {
+                padding: 25px;
+            }
+            
+            .social-profile-content {
+                padding: 30px;
+            }
+            
+            .games-container {
+                gap: 35px;
+                margin-top: 50px;
+            }
+            
+            .game-header {
+                padding: 25px;
+            }
+            
+            .game-content {
+                padding: 30px;
+            }
+            
+            .quote-slider {
+                margin: 60px auto;
+                padding: 40px;
+            }
+            
+            .quote {
+                font-size: 1.4rem;
+            }
+            
+            .footer {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            h1 {
+                font-size: 4rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .social-profiles {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+        
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(164, 0, 0, 0.15);
+            box-shadow: 0 0 15px rgba(164, 0, 0, 0.2);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-medium);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary-dark), var(--primary-color));
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
+        }
+        
+        /* God of War themed elements */
+        .kratos-axe {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23a40000" d="M50,10L60,40L80,50L60,60L50,90L40,60L20,50L40,40Z"/></svg>') no-repeat;
+            background-size: contain;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .axe-1 {
+            top: 20%;
+            left: 10%;
+            animation: float-axe 20s infinite linear;
+        }
+        
+        .axe-2 {
+            top: 60%;
+            right: 10%;
+            animation: float-axe 25s infinite linear reverse;
+        }
+        
+        @keyframes float-axe {
+            0% { transform: rotate(0deg) translateX(0px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .contact-item {
+                min-width: 100%;
+            }
+            
+            .social-profiles {
+                grid-template-columns: 1fr;
+            }
+            
+            .games-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-card:hover {
+                transform: none;
+            }
+            
+            .social-profile-card:hover {
+                transform: none;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        .game-card, .social-profile-card, .contact-item {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Prevent text selection on interactive elements */
+        .game-card, .social-profile-card, .contact-item, .quote-dot {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="kratos-axe axe-1"></div>
+    <div class="kratos-axe axe-2"></div>
+    
+    <div class="container">
+        <header>
+            <div class="profile-container">
+                <div class="avatar">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h1>ULQUIORRA CIFER</h1>
+                <h2>GOD OF WAR | GAMING ENTHUSIAST</h2>
+                <div class="tagline fade-in">
+                    "Boy! We must continue our journey while mastering both studies and gaming"
+                </div>
+            </div>
+        </header>
+        
+        <section class="section">
+            <h3>ABOUT ME</h3>
+            <div class="about fade-in">
+                <p>I'm a <span class="highlight">6th grade student</span> from <span class="highlight">Comilla</span> with a passion for both academics and gaming. When I'm not hitting the books, I'm exploring vast virtual worlds and honing my skills across different game genres.</p>
+                <p>I'm <span class="highlight">particularly skilled</span> in various gaming genres, from epic AAA titles like <span class="highlight">God of War</span>, <span class="highlight">The Witcher</span>, and <span class="highlight">Elden Ring</span> to competitive eSports games like <span class="highlight">BGMI</span> and <span class="highlight">FreeFire</span>.</p>
+                <p>My goal is to maintain a healthy balance between my studies and gaming passion, constantly improving in both areas while connecting with fellow gamers worldwide!</p>
+            </div>
+        </section>
+        
+        <!-- Quote Slider Section -->
+        <section class="section">
+            <h3>GAMING WISDOM</h3>
+            <div class="quote-slider fade-in">
+                <div class="quote active">
+                    "Do not be sorry. Be better."
+                    <span class="quote-source">- Kratos, God of War (2018)</span>
+                </div>
+                <div class="quote">
+                    "The world doesn't need a hero. It needs a professional."
+                    <span class="quote-source">- Geralt of Rivia, The Witcher 3</span>
+                </div>
+                <div class="quote">
+                    "Don't be sorry. Be better."
+                    <span class="quote-source">- Kratos, God of War Ragnarok</span>
+                </div>
+                <div class="quote">
+                    "Fear not the dark, my friend, and let the feast begin."
+                    <span class="quote-source">- Darkeater Midir, Dark Souls III</span>
+                </div>
+                <div class="quote">
+                    "No matter how dark the night, morning always comes."
+                    <span class="quote-source">- Lulu, Final Fantasy X</span>
+                </div>
+                <div class="quote">
+                    "We are born of the blood, made men by the blood, undone by the blood."
+                    <span class="quote-source">- Bloodborne</span>
+                </div>
+                <div class="quote-nav">
+                    <div class="quote-dot active" data-index="0"></div>
+                    <div class="quote-dot" data-index="1"></div>
+                    <div class="quote-dot" data-index="2"></div>
+                    <div class="quote-dot" data-index="3"></div>
+                    <div class="quote-dot" data-index="4"></div>
+                    <div class="quote-dot" data-index="5"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h3>CONTACT INFORMATION</h3>
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <i class="fas fa-envelope"></i>
+                    <span>sakibexe77@gmail.com</span>
+                </div>
+                <div class="contact-item fade-in">
+                    <i class="fas fa-phone"></i>
+                    <span>0187288*014</span>
+                </div>
+                <div class="contact-item fade-in">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Comilla, Bangladesh</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Social Profiles Section -->
+        <section class="section">
+            <h3>SOCIAL PROFILES</h3>
+            <div class="social-profiles">
+                <div class="social-profile-card fade-in">
+                    <div class="social-profile-header">
+                        <div class="social-profile-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="social-profile-title">GitHub</div>
+                    </div>
+                    <div class="social-profile-content">
+                        <div class="social-profile-desc">
+                            Check out my coding projects and game development experiments on GitHub. I share code snippets, small game prototypes, and tools I've created.
+                        </div>
+                        <a href="https://github.com/sakibexe77-ux" class="social-profile-link" target="_blank">
+                            Visit My GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="social-profile-card fade-in">
+                    <div class="social-profile-header">
+                        <div class="social-profile-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="social-profile-title">Facebook</div>
+                    </div>
+                    <div class="social-profile-content">
+                        <div class="social-profile-desc">
+                            Connect with me on Facebook for gaming discussions, sharing achievements, and staying updated with the latest gaming news and events.
+                        </div>
+                        <a href="https://www.facebook.com/siyamexe69" class="social-profile-link" target="_blank">
+                            Connect on Facebook
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="social-profile-card fade-in">
+                    <div class="social-profile-header">
+                        <div class="social-profile-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-profile-title">Instagram</div>
+                    </div>
+                    <div class="social-profile-content">
+                        <div class="social-profile-desc">
+                            Follow my gaming journey on Instagram where I share screenshots, short clips of gameplay, and behind-the-scenes of my gaming sessions.
+                        </div>
+                        <a href="https://www.instagram.com/zoroexe10/" class="social-profile-link" target="_blank">
+                            Follow on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h3>GAMES I MASTER</h3>
+            <div class="games-container">
+                <!-- Game Cards -->
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-axe-battle"></i>
+                        </div>
+                        <div class="game-title">God of War Series</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Mastered all combat techniques across the entire series.</div>
+                        <ul class="game-features">
+                            <li>Completed 100% of achievements</li>
+                            <li>Expert in puzzle solving</li>
+                            <li>GMGOW difficulty completed</li>
+                            <li>All Valkyries defeated</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-dragon"></i>
+                        </div>
+                        <div class="game-title">The Witcher 3</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Completed all quests and expansions with multiple endings.</div>
+                        <ul class="game-features">
+                            <li>Death March difficulty</li>
+                            <li>All Gwent cards collected</li>
+                            <li>Master alchemist and crafter</li>
+                            <li>All monster contracts completed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <div class="game-title">Dark Souls Series</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Conquered all challenges across the entire series.</div>
+                        <ul class="game-features">
+                            <li>SL1 runs completed</li>
+                            <li>All bosses defeated solo</li>
+                            <li>PVP combat specialist</li>
+                            <li>Lore master</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-horse"></i>
+                        </div>
+                        <div class="game-title">Elden Ring</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Became Elden Lord with multiple character builds.</div>
+                        <ul class="game-features">
+                            <li>Multiple playthroughs</li>
+                            <li>All bosses defeated</li>
+                            <li>RL1 run completed</li>
+                            <li>All endings achieved</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Additional game cards would follow the same pattern -->
+                <!-- For brevity, I've included only a few examples -->
+                
+            </div>
+        </section>
+        
+        <div class="footer">
+            <p>© 2025 ULQUIORRA CIFER - Gaming Portfolio | Balance in Gaming and Studies</p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 60;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 12 + 3;
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 20 + 10;
+                const animationDelay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}vw`;
+                particle.style.animationDuration = `${animationDuration}s`;
+                particle.style.animationDelay = `${animationDelay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Fade in animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOptions = {
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Quote slider functionality
+            const quotes = document.querySelectorAll('.quote');
+            const dots = document.querySelectorAll('.quote-dot');
+            let currentQuote = 0;
+            
+            function showQuote(index) {
+                quotes.forEach(quote => quote.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                quotes[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentQuote = index;
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showQuote(index);
+                });
+            });
+            
+            // Auto-advance quotes
+            setInterval(() => {
+                currentQuote = (currentQuote + 1) % quotes.length;
+                showQuote(currentQuote);
+            }, 7000);
+        });
+    </script>
+</body>
+</html>
