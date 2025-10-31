@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ulquiorra Cifer - Gaming Portfolio</title>
+    <title>Ulquiorra Cifer - AMOLED Gaming Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,15 +14,17 @@
         }
         
         :root {
-            --primary-color: #a40000;
-            --primary-dark: #5d0000;
-            --primary-light: #ff3f3f;
-            --bg-dark: #0c0c0c;
-            --bg-medium: #1a1a1a;
+            --primary-color: #00ff88;
+            --primary-dark: #00cc6a;
+            --primary-light: #66ffb3;
+            --accent-color: #00ffff;
+            --bg-dark: #000000;
+            --bg-medium: #0a0a0a;
+            --bg-light: #111111;
             --text-light: #e0e0e0;
-            --text-white: #fff;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            --card-hover-shadow: 0 20px 40px rgba(164, 0, 0, 0.4);
+            --text-white: #ffffff;
+            --card-shadow: 0 5px 15px rgba(0, 255, 136, 0.1);
+            --card-hover-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
             --mobile-breakpoint: 768px;
             --tablet-breakpoint: 992px;
         }
@@ -30,7 +32,7 @@
         body {
             background: var(--bg-dark);
             color: var(--text-light);
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Exo 2', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
@@ -44,11 +46,9 @@
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800"><rect fill="%23121212" width="1200" height="800"/><path fill="%23333" d="M0,0L1200,800M1200,0L0,800" stroke="%23444" stroke-width="2"/></svg>'),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800"><rect fill="%23121212" width="1200" height="800"/><circle fill="%235d0000" opacity="0.2" cx="200" cy="200" r="100"/><circle fill="%23a40000" opacity="0.1" cx="800" cy="600" r="150"/><circle fill="%235d0000" opacity="0.15" cx="1000" cy="300" r="120"/></svg>');
-            background-size: cover, 200px, cover;
-            background-position: center;
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 255, 255, 0.03) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
             z-index: -1;
         }
         
@@ -63,9 +63,6 @@
             padding: 60px 0 40px;
             text-align: center;
             position: relative;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300"><path fill="%23a40000" fill-opacity="0.15" d="M0,0L1200,300L0,300Z"/></svg>') bottom no-repeat, 
-                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="1200" height="200"><path fill="%23a40000" fill-opacity="0.1" d="M0,150L1200,0L1200,200L0,200Z"/></svg>') bottom no-repeat;
-            background-size: 100% 40%, 100% 50%;
         }
         
         .profile-container {
@@ -79,14 +76,14 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 70px;
-            color: var(--text-white);
-            border: 5px solid var(--primary-dark);
-            box-shadow: 0 0 30px rgba(164, 0, 0, 0.7);
+            color: var(--bg-dark);
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -106,25 +103,26 @@
         }
         
         h1 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 10px;
             color: var(--text-white);
-            text-shadow: 3px 3px 0 var(--primary-dark), 0 0 15px rgba(164, 0, 0, 0.7);
-            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            letter-spacing: 3px;
+            font-weight: 700;
         }
         
         h2 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 1.4rem;
             margin-bottom: 25px;
-            color: #ccc;
+            color: var(--primary-light);
             font-weight: 400;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
         
         h3 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
             margin: 50px 0 30px;
             color: var(--text-white);
@@ -140,8 +138,8 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
             border-radius: 2px;
         }
         
@@ -150,32 +148,19 @@
             max-width: 800px;
             margin: 0 auto;
             color: var(--text-white);
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(10, 10, 10, 0.8);
             padding: 20px 30px;
             border-radius: 10px;
-            border-left: 5px solid var(--primary-color);
-            border-right: 5px solid var(--primary-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(10px);
+            font-family: 'Exo 2', sans-serif;
         }
         
         /* Section Styles */
         .section {
             padding: 60px 0;
             position: relative;
-        }
-        
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path fill="%23a40000" fill-opacity="0.05" d="M0,0L100,100M100,0L0,100" stroke="%23a40000" stroke-opacity="0.05" stroke-width="2"/></svg>');
-            background-size: 50px;
-            opacity: 0.3;
-            z-index: -1;
         }
         
         .about {
@@ -185,11 +170,11 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 30px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(10, 10, 10, 0.7);
             border-radius: 15px;
             box-shadow: var(--card-shadow);
-            border: 1px solid rgba(164, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
         }
@@ -205,9 +190,9 @@
         }
         
         .highlight {
-            color: var(--primary-light);
+            color: var(--primary-color);
             font-weight: 600;
-            text-shadow: 0 0 10px rgba(255, 63, 63, 0.5);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
         }
         
         /* Contact Info */
@@ -222,17 +207,17 @@
         .contact-item {
             display: flex;
             align-items: center;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(10, 10, 10, 0.7);
             padding: 15px 20px;
             border-radius: 10px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(164, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 136, 0.1);
             min-width: 250px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
         }
         
         .contact-item:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             box-shadow: var(--card-hover-shadow);
             border-color: var(--primary-color);
         }
@@ -254,43 +239,44 @@
         }
         
         .social-profile-card {
-            background: linear-gradient(145deg, var(--bg-dark), var(--bg-medium));
-            border-radius: 15px;
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
             transition: all 0.4s ease;
-            border: 1px solid rgba(164, 0, 0, 0.2);
+            border: 1px solid rgba(0, 255, 136, 0.1);
             position: relative;
             display: flex;
             flex-direction: column;
+            backdrop-filter: blur(10px);
         }
         
         .social-profile-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px);
             box-shadow: var(--card-hover-shadow);
             border-color: var(--primary-color);
         }
         
         .social-profile-header {
             padding: 20px;
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            background: linear-gradient(90deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 255, 0.1));
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
         }
         
         .social-profile-icon {
             font-size: 35px;
-            color: white;
-            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            color: var(--primary-color);
         }
         
         .social-profile-title {
-            font-family: 'Cinzel', serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 1.4rem;
-            color: white;
+            color: var(--text-white);
         }
         
         .social-profile-content {
@@ -302,7 +288,7 @@
         
         .social-profile-desc {
             font-size: 1.1rem;
-            color: #ccc;
+            color: #b0b0b0;
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -312,8 +298,8 @@
             margin-top: auto;
             text-align: center;
             padding: 12px;
-            background: rgba(164, 0, 0, 0.2);
-            color: #fff;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary-color);
             text-decoration: none;
             border-radius: 8px;
             transition: all 0.3s ease;
@@ -322,11 +308,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid rgba(0, 255, 136, 0.2);
         }
         
         .social-profile-link:hover {
-            background: rgba(164, 0, 0, 0.4);
+            background: rgba(0, 255, 136, 0.2);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
         }
         
         /* Games Section */
@@ -338,38 +326,39 @@
         }
         
         .game-card {
-            background: linear-gradient(145deg, var(--bg-dark), var(--bg-medium));
-            border-radius: 15px;
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
             transition: all 0.4s ease;
-            border: 1px solid rgba(164, 0, 0, 0.2);
+            border: 1px solid rgba(0, 255, 136, 0.1);
             position: relative;
+            backdrop-filter: blur(10px);
         }
         
         .game-card:hover {
-            transform: translateY(-15px) scale(1.02);
+            transform: translateY(-10px);
             box-shadow: var(--card-hover-shadow);
             border-color: var(--primary-color);
         }
         
         .game-header {
             padding: 20px;
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            background: linear-gradient(90deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 255, 0.1));
             text-align: center;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
         }
         
         .game-icon {
             font-size: 40px;
             margin-bottom: 15px;
-            color: white;
-            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            color: var(--primary-color);
         }
         
         .game-title {
-            font-family: 'Cinzel', serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
-            color: white;
+            color: var(--text-white);
             margin-bottom: 5px;
         }
         
@@ -379,7 +368,7 @@
         
         .game-desc {
             font-size: 1.1rem;
-            color: #ccc;
+            color: #b0b0b0;
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -396,72 +385,56 @@
         }
         
         .game-features li:before {
-            content: '⚔️';
+            content: '▹';
             margin-right: 10px;
-            font-size: 0.8rem;
+            font-size: 1rem;
+            color: var(--primary-color);
         }
         
-        /* Quote Slider */
-        .quote-slider {
-            max-width: 900px;
-            margin: 50px auto;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid rgba(164, 0, 0, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+        /* Quote Cards Section */
+        .quotes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .quote-card {
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 255, 136, 0.1);
             position: relative;
-            overflow: hidden;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
         }
         
-        .quote {
-            text-align: center;
+        .quote-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-hover-shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .quote-text {
             font-style: italic;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #fff;
-            display: none;
-        }
-        
-        .quote.active {
-            display: block;
-            animation: fadeIn 1.5s ease;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
         
         .quote-source {
-            display: block;
-            margin-top: 20px;
             font-size: 1rem;
             color: var(--primary-color);
             font-style: normal;
             font-weight: 600;
-        }
-        
-        .quote-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 25px;
-            gap: 15px;
-        }
-        
-        .quote-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .quote-dot.active {
-            background: var(--primary-color);
-            transform: scale(1.3);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            text-align: right;
+            border-top: 1px solid rgba(0, 255, 136, 0.1);
+            padding-top: 15px;
         }
         
         /* Footer */
@@ -469,9 +442,9 @@
             text-align: center;
             padding: 50px 0;
             font-size: 1.1rem;
-            color: #ccc;
-            background: rgba(0, 0, 0, 0.7);
-            border-top: 1px solid rgba(164, 0, 0, 0.3);
+            color: #b0b0b0;
+            background: rgba(10, 10, 10, 0.7);
+            border-top: 1px solid rgba(0, 255, 136, 0.1);
             margin-top: 50px;
             position: relative;
         }
@@ -483,7 +456,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(to right, var(--primary-dark), var(--primary-color), var(--primary-dark));
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
         }
         
         /* Responsive Design */
@@ -548,26 +521,17 @@
                 padding: 30px;
             }
             
-            .games-container {
+            .games-container, .quotes-container {
                 gap: 35px;
                 margin-top: 50px;
             }
             
-            .game-header {
+            .game-header, .quote-card {
                 padding: 25px;
             }
             
             .game-content {
                 padding: 30px;
-            }
-            
-            .quote-slider {
-                margin: 60px auto;
-                padding: 40px;
-            }
-            
-            .quote {
-                font-size: 1.4rem;
             }
             
             .footer {
@@ -589,8 +553,8 @@
             }
         }
         
-        /* Particles */
-        .particles {
+        /* AMOLED Elements */
+        .amoled-elements {
             position: fixed;
             top: 0;
             left: 0;
@@ -600,11 +564,11 @@
             overflow: hidden;
         }
         
-        .particle {
+        .pixel {
             position: absolute;
-            border-radius: 50%;
-            background: rgba(164, 0, 0, 0.15);
-            box-shadow: 0 0 15px rgba(164, 0, 0, 0.2);
+            width: 2px;
+            height: 2px;
+            background: rgba(0, 255, 136, 0.1);
             animation: float 15s infinite linear;
         }
         
@@ -633,7 +597,7 @@
         
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
         
         ::-webkit-scrollbar-track {
@@ -642,37 +606,37 @@
         
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, var(--primary-dark), var(--primary-color));
-            border-radius: 5px;
+            border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
         }
         
-        /* God of War themed elements */
-        .kratos-axe {
+        /* AMOLED themed elements */
+        .circuit {
             position: absolute;
             width: 100px;
             height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23a40000" d="M50,10L60,40L80,50L60,60L50,90L40,60L20,50L40,40Z"/></svg>') no-repeat;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="none" stroke="%2300ff88" stroke-width="2" d="M10,10L90,10L90,90L10,90Z M30,30L70,30L70,70L30,70Z"/><circle fill="%2300ff88" cx="50" cy="50" r="5"/></svg>') no-repeat;
             background-size: contain;
-            opacity: 0.1;
+            opacity: 0.05;
             z-index: -1;
         }
         
-        .axe-1 {
+        .circuit-1 {
             top: 20%;
             left: 10%;
-            animation: float-axe 20s infinite linear;
+            animation: float-circuit 20s infinite linear;
         }
         
-        .axe-2 {
+        .circuit-2 {
             top: 60%;
             right: 10%;
-            animation: float-axe 25s infinite linear reverse;
+            animation: float-circuit 25s infinite linear reverse;
         }
         
-        @keyframes float-axe {
+        @keyframes float-circuit {
             0% { transform: rotate(0deg) translateX(0px) rotate(0deg); }
             100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
         }
@@ -687,39 +651,31 @@
                 min-width: 100%;
             }
             
-            .social-profiles {
+            .social-profiles, .games-container, .quotes-container {
                 grid-template-columns: 1fr;
             }
             
-            .games-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .game-card:hover {
-                transform: none;
-            }
-            
-            .social-profile-card:hover {
+            .game-card:hover, .social-profile-card:hover, .quote-card:hover {
                 transform: none;
             }
         }
         
         /* Touch-friendly improvements */
-        .game-card, .social-profile-card, .contact-item {
+        .game-card, .social-profile-card, .contact-item, .quote-card {
             -webkit-tap-highlight-color: transparent;
         }
         
         /* Prevent text selection on interactive elements */
-        .game-card, .social-profile-card, .contact-item, .quote-dot {
+        .game-card, .social-profile-card, .contact-item, .quote-card {
             user-select: none;
             -webkit-user-select: none;
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-    <div class="kratos-axe axe-1"></div>
-    <div class="kratos-axe axe-2"></div>
+    <div class="amoled-elements" id="amoled-elements"></div>
+    <div class="circuit circuit-1"></div>
+    <div class="circuit circuit-2"></div>
     
     <div class="container">
         <header>
@@ -728,9 +684,9 @@
                     <i class="fas fa-gamepad"></i>
                 </div>
                 <h1>ULQUIORRA CIFER</h1>
-                <h2>GOD OF WAR | GAMING ENTHUSIAST</h2>
+                <h2>GAMING ENTHUSIAST | TECH EXPLORER</h2>
                 <div class="tagline fade-in">
-                    "Boy! We must continue our journey while mastering both studies and gaming"
+                    "In the digital realm, I find my true self - mastering games and code alike"
                 </div>
             </div>
         </header>
@@ -739,46 +695,55 @@
             <h3>ABOUT ME</h3>
             <div class="about fade-in">
                 <p>I'm a <span class="highlight">6th grade student</span> from <span class="highlight">Comilla</span> with a passion for both academics and gaming. When I'm not hitting the books, I'm exploring vast virtual worlds and honing my skills across different game genres.</p>
-                <p>I'm <span class="highlight">particularly skilled</span> in various gaming genres, from epic AAA titles like <span class="highlight">God of War</span>, <span class="highlight">The Witcher</span>, and <span class="highlight">Elden Ring</span> to competitive eSports games like <span class="highlight">BGMI</span> and <span class="highlight">FreeFire</span>.</p>
+                <p>I'm <span class="highlight">particularly skilled</span> in various gaming genres, from epic AAA titles like <span class="highlight">Cyberpunk 2077</span>, <span class="highlight">Elden Ring</span>, and <span class="highlight">Doom Eternal</span> to competitive eSports games like <span class="highlight">BGMI</span> and <span class="highlight">FreeFire</span>.</p>
                 <p>My goal is to maintain a healthy balance between my studies and gaming passion, constantly improving in both areas while connecting with fellow gamers worldwide!</p>
             </div>
         </section>
         
-        <!-- Quote Slider Section -->
+        <!-- Quotes Section -->
         <section class="section">
             <h3>GAMING WISDOM</h3>
-            <div class="quote-slider fade-in">
-                <div class="quote active">
-                    "Do not be sorry. Be better."
-                    <span class="quote-source">- Kratos, God of War (2018)</span>
+            <div class="quotes-container">
+                <div class="quote-card fade-in">
+                    <div class="quote-text">
+                        "The right man in the wrong place can make all the difference in the world."
+                    </div>
+                    <div class="quote-source">- G-Man, Half-Life 2</div>
                 </div>
-                <div class="quote">
-                    "The world doesn't need a hero. It needs a professional."
-                    <span class="quote-source">- Geralt of Rivia, The Witcher 3</span>
+                
+                <div class="quote-card fade-in">
+                    <div class="quote-text">
+                        "War. War never changes. But men do, through the roads they walk."
+                    </div>
+                    <div class="quote-source">- Ulysses, Fallout: New Vegas</div>
                 </div>
-                <div class="quote">
-                    "Don't be sorry. Be better."
-                    <span class="quote-source">- Kratos, God of War Ragnarok</span>
+                
+                <div class="quote-card fade-in">
+                    <div class="quote-text">
+                        "We all make choices, but in the end, our choices make us."
+                    </div>
+                    <div class="quote-source">- Andrew Ryan, BioShock</div>
                 </div>
-                <div class="quote">
-                    "Fear not the dark, my friend, and let the feast begin."
-                    <span class="quote-source">- Darkeater Midir, Dark Souls III</span>
+                
+                <div class="quote-card fade-in">
+                    <div class="quote-text">
+                        "The right thing... what is it? I wonder, if you do the right thing, does it really make everyone happy?"
+                    </div>
+                    <div class="quote-source">- Yu Narukami, Persona 4</div>
                 </div>
-                <div class="quote">
-                    "No matter how dark the night, morning always comes."
-                    <span class="quote-source">- Lulu, Final Fantasy X</span>
+                
+                <div class="quote-card fade-in">
+                    <div class="quote-text">
+                        "Stand amongst the ashes of a trillion dead souls, and ask the ghosts if honor matters. The silence is your answer."
+                    </div>
+                    <div class="quote-source">- Javik, Mass Effect 3</div>
                 </div>
-                <div class="quote">
-                    "We are born of the blood, made men by the blood, undone by the blood."
-                    <span class="quote-source">- Bloodborne</span>
-                </div>
-                <div class="quote-nav">
-                    <div class="quote-dot active" data-index="0"></div>
-                    <div class="quote-dot" data-index="1"></div>
-                    <div class="quote-dot" data-index="2"></div>
-                    <div class="quote-dot" data-index="3"></div>
-                    <div class="quote-dot" data-index="4"></div>
-                    <div class="quote-dot" data-index="5"></div>
+                
+                <div class="quote-card fade-in">
+                    <div class="quote-text">
+                        "It's a funny thing, ambition. It can take one to sublime heights or harrowing depths. And yet, without it, would we even exist?"
+                    </div>
+                    <div class="quote-source">- Solas, Dragon Age: Inquisition</div>
                 </div>
             </div>
         </section>
@@ -861,21 +826,75 @@
         <section class="section">
             <h3>GAMES I MASTER</h3>
             <div class="games-container">
-                <!-- Game Cards -->
+                <!-- Cyberpunk & Futuristic Games -->
                 <div class="game-card fade-in">
                     <div class="game-header">
                         <div class="game-icon">
-                            <i class="fas fa-axe-battle"></i>
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <div class="game-title">God of War Series</div>
+                        <div class="game-title">Cyberpunk 2077</div>
                     </div>
                     <div class="game-content">
-                        <div class="game-desc">Mastered all combat techniques across the entire series.</div>
+                        <div class="game-desc">Became a legend in Night City with multiple life paths and builds.</div>
                         <ul class="game-features">
-                            <li>Completed 100% of achievements</li>
-                            <li>Expert in puzzle solving</li>
-                            <li>GMGOW difficulty completed</li>
-                            <li>All Valkyries defeated</li>
+                            <li>All endings achieved</li>
+                            <li>Max level with all attributes</li>
+                            <li>All gigs and side jobs completed</li>
+                            <li>Legendary gear collection</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <div class="game-title">Doom Eternal</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Ripped and tore through hell's armies as the Doom Slayer.</div>
+                        <ul class="game-features">
+                            <li>Ultra-Nightmare completed</li>
+                            <li>All collectibles found</li>
+                            <li>All milestones achieved</li>
+                            <li>Battlemode mastery</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <div class="game-title">Elden Ring</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Became Elden Lord with multiple character builds and playstyles.</div>
+                        <ul class="game-features">
+                            <li>All bosses defeated</li>
+                            <li>Multiple endings achieved</li>
+                            <li>RL1 run completed</li>
+                            <li>All legendary weapons collected</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <div class="game-title">Persona 5 Royal</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Became a phantom thief stealing hearts and changing society.</div>
+                        <ul class="game-features">
+                            <li>All confidants maxed</li>
+                            <li>All personas collected</li>
+                            <li>True ending achieved</li>
+                            <li>Merciless difficulty completed</li>
                         </ul>
                     </div>
                 </div>
@@ -888,12 +907,12 @@
                         <div class="game-title">The Witcher 3</div>
                     </div>
                     <div class="game-content">
-                        <div class="game-desc">Completed all quests and expansions with multiple endings.</div>
+                        <div class="game-desc">Mastered monster hunting across the Northern Realms.</div>
                         <ul class="game-features">
-                            <li>Death March difficulty</li>
+                            <li>Death March difficulty completed</li>
                             <li>All Gwent cards collected</li>
-                            <li>Master alchemist and crafter</li>
-                            <li>All monster contracts completed</li>
+                            <li>All monster contracts fulfilled</li>
+                            <li>All endings achieved</li>
                         </ul>
                     </div>
                 </div>
@@ -901,9 +920,64 @@
                 <div class="game-card fade-in">
                     <div class="game-header">
                         <div class="game-icon">
-                            <i class="fas fa-skull"></i>
+                            <i class="fas fa-space-shuttle"></i>
                         </div>
-                        <div class="game-title">Dark Souls Series</div>
+                        <div class="game-title">Mass Effect Legendary</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Commanded the Normandy and saved the galaxy multiple times.</div>
+                        <ul class="game-features">
+                            <li>Insanity difficulty completed</li>
+                            <li>All squad members loyal</li>
+                            <li>Paragon and Renegade playthroughs</li>
+                            <li>100% completion across trilogy</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Additional Game Cards -->
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-biohazard"></i>
+                        </div>
+                        <div class="game-title">Resident Evil Series</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Survived countless bioterrorism outbreaks and zombie hordes.</div>
+                        <ul class="game-features">
+                            <li>Professional difficulty completed</li>
+                            <li>All files and collectibles found</li>
+                            <li>Speedrun achievements</li>
+                            <li>S-rank on all missions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="game-title">Mirror's Edge Series</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Mastered the art of free-running in a dystopian city.</div>
+                        <ul class="game-features">
+                            <li>All time trials completed</li>
+                            <li>No-shot playthroughs</li>
+                            <li>All collectibles found</li>
+                            <li>Speedrun expert</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="game-title">Dark Souls Trilogy</div>
                     </div>
                     <div class="game-content">
                         <div class="game-desc">Conquered all challenges across the entire series.</div>
@@ -919,54 +993,263 @@
                 <div class="game-card fade-in">
                     <div class="game-header">
                         <div class="game-icon">
-                            <i class="fas fa-horse"></i>
+                            <i class="fas fa-fist-raised"></i>
                         </div>
-                        <div class="game-title">Elden Ring</div>
+                        <div class="game-title">Street Fighter V</div>
                     </div>
                     <div class="game-content">
-                        <div class="game-desc">Became Elden Lord with multiple character builds.</div>
+                        <div class="game-desc">Mastered countless fighting techniques and combos.</div>
                         <ul class="game-features">
-                            <li>Multiple playthroughs</li>
-                            <li>All bosses defeated</li>
-                            <li>RL1 run completed</li>
+                            <li>Grand Master rank</li>
+                            <li>All characters mastered</li>
+                            <li>Tournament experience</li>
+                            <li>Perfect victory achievements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <div class="game-title">Need for Speed Heat</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Dominanted the streets as racing legend.</div>
+                        <ul class="game-features">
+                            <li>All events completed</li>
+                            <li>Max rep level</li>
+                            <li>All cars collected and upgraded</li>
+                            <li>World record times</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-monument"></i>
+                        </div>
+                        <div class="game-title">Far Cry 5</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Liberated Hope County from the Project at Eden's Gate.</div>
+                        <ul class="game-features">
+                            <li>All outposts liberated</li>
+                            <li>All missions completed</li>
+                            <li>All animals hunted</li>
+                            <li>All achievements unlocked</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-dragon"></i>
+                        </div>
+                        <div class="game-title">Dragon Age: Inquisition</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Shaped the fate of Thedas as the Inquisitor.</div>
+                        <ul class="game-features">
+                            <li>All story paths completed</li>
+                            <li>All companions maxed</li>
+                            <li>Nightmare difficulty</li>
                             <li>All endings achieved</li>
                         </ul>
                     </div>
                 </div>
                 
-                <!-- Additional game cards would follow the same pattern -->
-                <!-- For brevity, I've included only a few examples -->
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="game-title">Portal 2</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Mastered portal-based puzzle solving with Wheatley and GLaDOS.</div>
+                        <ul class="game-features">
+                            <li>All test chambers completed</li>
+                            <li>All challenges mastered</li>
+                            <li>Speedrun achievements</li>
+                            <li>Advanced map creator</li>
+                        </ul>
+                    </div>
+                </div>
                 
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-hat-cowboy"></i>
+                        </div>
+                        <div class="game-title">Red Dead Redemption 2</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Lived the life of an outlaw in the Wild West as Arthur Morgan.</div>
+                        <ul class="game-features">
+                            <li>100% completion</li>
+                            <li>All legendary animals hunted</li>
+                            <li>All challenges completed</li>
+                            <li>Honor playthroughs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="game-title">Horizon Forbidden West</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Mastered hunting mechanized creatures in a post-apocalyptic world.</div>
+                        <ul class="game-features">
+                            <li>All machines overridden</li>
+                            <li>Ultra Hard difficulty completed</li>
+                            <li>All cauldrons completed</li>
+                            <li>All collectibles found</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <div class="game-title">Marvel's Spider-Man</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Swung through NYC as the friendly neighborhood Spider-Man.</div>
+                        <ul class="game-features">
+                            <li>100% completion</li>
+                            <li>All suits unlocked</li>
+                            <li>All crimes stopped</li>
+                            <li>Ultimate difficulty completed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-ghost"></i>
+                        </div>
+                        <div class="game-title">Ghost of Tsushima</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Mastered the way of the samurai and ghost tactics.</div>
+                        <ul class="game-features">
+                            <li>Lethal difficulty completed</li>
+                            <li>All techniques mastered</li>
+                            <li>All mythic tales completed</li>
+                            <li>100% completion</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-chess-knight"></i>
+                        </div>
+                        <div class="game-title">Hollow Knight</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Explored the vast underground kingdom of Hallownest.</div>
+                        <ul class="game-features">
+                            <li>112% completion</li>
+                            <li>All bosses defeated</li>
+                            <li>Path of Pain completed</li>
+                            <li>Steel Soul mode mastered</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-dungeon"></i>
+                        </div>
+                        <div class="game-title">Diablo IV</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Fought the forces of Hell across Sanctuary.</div>
+                        <ul class="game-features">
+                            <li>Multiple class mastery</li>
+                            <li>Torment difficulty completed</li>
+                            <li>All set items collected</li>
+                            <li>Greater Rift level 100+</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="game-title">Deus Ex: Mankind Divided</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Uncovered conspiracies as an augmented agent.</div>
+                        <ul class="game-features">
+                            <li>All augmentations mastered</li>
+                            <li>Ghost playthroughs completed</li>
+                            <li>All endings achieved</li>
+                            <li>Pacifist runs accomplished</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="game-card fade-in">
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="game-title">Destiny 2</div>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-desc">Became a Guardian protecting the last city of humanity.</div>
+                        <ul class="game-features">
+                            <li>Max power level achieved</li>
+                            <li>All raids completed</li>
+                            <li>Flawless Trials runs</li>
+                            <li>Seal titles unlocked</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
         
         <div class="footer">
-            <p>© 2025 ULQUIORRA CIFER - Gaming Portfolio | Balance in Gaming and Studies</p>
+            <p>© 2025 ULQUIORRA CIFER - AMOLED Gaming Portfolio | Balance in Gaming and Studies</p>
         </div>
     </div>
 
     <script>
-        // Create floating particles
+        // Create floating pixels
         document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const numberOfParticles = 60;
+            const amoledContainer = document.getElementById('amoled-elements');
+            const numberOfPixels = 80;
             
-            for (let i = 0; i < numberOfParticles; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+            for (let i = 0; i < numberOfPixels; i++) {
+                const pixel = document.createElement('div');
+                pixel.classList.add('pixel');
                 
-                const size = Math.random() * 12 + 3;
                 const left = Math.random() * 100;
                 const animationDuration = Math.random() * 20 + 10;
                 const animationDelay = Math.random() * 5;
                 
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${left}vw`;
-                particle.style.animationDuration = `${animationDuration}s`;
-                particle.style.animationDelay = `${animationDelay}s`;
+                pixel.style.left = `${left}vw`;
+                pixel.style.animationDuration = `${animationDuration}s`;
+                pixel.style.animationDelay = `${animationDelay}s`;
                 
-                particlesContainer.appendChild(particle);
+                amoledContainer.appendChild(pixel);
             }
             
             // Fade in animation
@@ -989,33 +1272,6 @@
             fadeElements.forEach(element => {
                 fadeInObserver.observe(element);
             });
-            
-            // Quote slider functionality
-            const quotes = document.querySelectorAll('.quote');
-            const dots = document.querySelectorAll('.quote-dot');
-            let currentQuote = 0;
-            
-            function showQuote(index) {
-                quotes.forEach(quote => quote.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                quotes[index].classList.add('active');
-                dots[index].classList.add('active');
-                currentQuote = index;
-            }
-            
-            dots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    showQuote(index);
-                });
-            });
-            
-            // Auto-advance quotes
-            setInterval(() => {
-                currentQuote = (currentQuote + 1) % quotes.length;
-                showQuote(currentQuote);
-            }, 7000);
         });
     </script>
 </body>
